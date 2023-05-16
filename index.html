@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/old_file_effect.css">
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <div class="background">
+    <div class="content">
+      <div class='film'>
+        <div class="effect">
+          <div class="grain"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <header></header>
+    <section id="namePlate">
+      <h1>Uchida Yuuki</h1>
+    </section>
+    <section id="menu">
+      <ul>
+        <li><a href="#history">経歴</a></li>
+        <li><a href="#language">経験言語など</a></li>
+        <li><a href="#practice">アルゴリズム</a></li>
+        <li><a href="#bite">興味</a></li>
+        <li><a href="#hobby">趣味</a></li>
+      </ul>
+    </section>
+    <section id="history">
+      <h1>経歴</h1>
+      <ul>
+        <li>1992年12月生まれ</li>
+        <li>2011年3月作新学院高等学校英進部卒</li>
+        <li>2015年3月帝京大学経済学部地域経済学科卒</li>
+      </ul>
+    </section>
+    <section id="language">
+      <h1>経験言語など</h1>
+      <ul>
+        <div class="languageContainer">
+          <li>JavaScript</li>
+        </div>
+        <div class="languageContainer">
+          <li>Java</li>
+        </div>
+        <div class="languageContainer">
+          <li>Python3</li>
+        </div>
+        <div class="languageContainer">
+          <li>MariaDB</li>
+        </div>
+        <div class="languageContainer">
+          <li>HTML/CSS</li>
+        </div>
+      </ul>
+    </section>
+    <section id="practice">
+      <h1>取り組んだアルゴリズム</h1>
+      <div id="argoMenu">
+        <div class="argo floydwarshall">ワーシャルフロイド法</div>
+        <div class="argo bfs">BFS</div>
+        <div class="argo cumulativeSum">累積和</div>
+        <div class="argo gcd">GCD</div>
+        <div class="argo eratosthenes">エラトステネスの篩</div>
+        <div class="argo primeFactorization">素因数分解</div>
+        <div class="argoCanvasContainer">
+          <canvas class="argoCanvas" width="300" height="300"></canvas>
+        </div>
+      </div>
+    </section>
+    <section id="bite">
+      <h1>興味</h1>
+      <ul class="interestsContainer">
+        <!-- <li>
+          <div class="interest">
+            <p class="interestName">Pytorch</p>
+          </div> -->
+        <!-- </li> -->
+        <li>
+          <div class="interest">
+            <p class="interestName">Three.js</p>
+            <canvas class="threeCanvas" width="200" height="200"></canvas>
+          </div>
+        </li>
+        <li>
+          <div class="interest">
+            <p class="interestName">React</p>
+            <div class="reactCode">
+              <p>class MyClass extends React.Component{<br>
+                render(){<br>
+                return (<br>
+                &lt;p&gt;Hello World!&lt;/p&gt;<br>
+                )<br>
+                }<br>
+                }<br>
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="hobby">
+      <h1>趣味</h1>
+      <ul>
+        <li>イラスト/ドット絵</li>
+        <li>Blender</li>
+      </ul>
+    </section>
+    <!-- <div class="gototop">
+      <span></span>
+      <span></span>
+    </div> -->
+    <footer></footer>
+  </main>
+  <script>
+    const target = document.getElementsByClassName('argo');
+
+    Array.prototype.forEach.call(target, element => {
+
+      element.addEventListener('mouseover', () => {
+        gsap.to(element, { scale: 1.5, duration: 1, ease: "elastic.out(1.2, 0.2)", overwrite: true });
+      });
+
+      element.addEventListener('mouseout', () => {
+        gsap.to(element, { scale: 1, duration: 1, ease: "elastic.out(1.5, 0.5)", overwrite: true });
+      });
+
+    });
+
+  </script>
+  <script type="module" src="./assets/js/GLTFLoader.js"></script>
+  <script type="module">
+    import * as THREE from './js/three.module.js';
+    import { GLTFLoader } from './js/GLTFLoader.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const renderTarget = document.getElementsByClassName('threeCanvas')[0];
+
+      let width = renderTarget.width;
+      let height = renderTarget.height;
+
+      const renderer = new THREE.WebGLRenderer({
+        canvas: renderTarget,
+        alpha: true,
+      });
+
+      renderer.setClearColor(0, 0);
+
+      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 2000);
+      camera.position.set(0, 0, +2.5);
+      const scene = new THREE.Scene();
+
+      const loader = new GLTFLoader();
+
+      const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
+      directionalLight.position.set(1, 1, 1);
+
+      const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.5);
+      scene.add(ambientLight);
+
+      scene.add(directionalLight);
+
+
+      let obj;
+      loader.load('./model/Apple.glb', (glb) => {
+        obj = glb.scene;
+        scene.add(obj);
+        loop();
+      });
+
+      let r = 0;
+      const loop = () => {
+        // renderTarget.width = window.innerWidth * 0.5;
+        // renderTarget.height = window.innerHeight * 0.5;
+
+        r += 0.01;
+        r = r > 360 ? r - 360 : r;
+
+        obj.rotation.x = Math.sin(r * Math.PI) * 0.5;
+        obj.rotation.y += 0.03;
+
+        renderer.setSize(renderTarget.width, renderTarget.height);
+        renderer.setPixelRatio('window'.devicePixelRatio);
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(loop);
+      }
+
+    });
+  </script>
+      <script>
+
+        class Maze {
+
+            constructor(w, h){
+                this.width = w;
+                this.height = h;
+                this.rectList = [];
+                this.start = [0,0];
+                this.goal = [0,0];
+                this.setSG();
+                this.setMap(w, h);
+                this.setWall();
+                this.initRect();
+            }
+            
+            initRect(){
+                for (let i = 0; i < 5; i++){
+                    for (let j = 0; j < 5; j++){
+                    this.rectList.push(new Rect(j * 60, i * 60, canvas));
+                    }
+                }
+            }
+            
+            setMap(w, h){
+                this.map = [];
+                for(let i = 0; i < this.width; i++){
+                    let tmp = []
+                    for(let j = 0; j < this.height; j++){
+                        tmp.push(0);
+                    }
+                    this.map.push(tmp);
+                }
+            }
+
+            setWall(){
+                for (let i = 0; i < this.height; i++){
+                    for (let j = 0; j < this.width; j++){
+                        if ( !((j == this.goal[0] && i == this.goal[1]) || (j == this.start[0] && i == this.start[1])) ) {
+                            this.map[j][i] = Math.random() > 0.2 ? 0 : 1;
+                        }
+                    }
+                }
+            }
+
+            setSG(){
+                function rand(l, h){
+
+                }
+
+                this.start[0] = Math.floor(Math.random() * 5);
+                this.start[1] = Math.floor(Math.random() * 5);
+                
+                this.goal[0] = Math.floor(Math.random() * 5);
+                this.goal[1] = Math.floor(Math.random() * 5);
+
+                while ((this.goal[0] == this.start[0]) && (this.goal[1] == this.start[1])){
+                    this.goal[0] = Math.floor(Math.random() * 5);
+                    this.goal[1] = Math.floor(Math.random() * 5);
+                }
+            }
+
+            bfs(){
+                var footprints = new Array(3);
+                for(let i = 0; i < this.height; i++) {
+                    footprints[i] = new Array(this.width).fill(0);
+                }
+
+                footprints[this.start[1]][this.start[0]] = 1;
+
+                let x;
+                let y;
+                let task = [];
+                task.push(this.start);
+
+                let reached = false;
+            
+                while (task.length > 0){
+                    let pos = task.pop();
+                    // console.log(pos)
+                    x = pos[0];
+                    y = pos[1];
+
+                    if (pos.toString() === this.goal.toString()){
+                        reached = true;
+                        // console.log("goal")
+                        break;
+                    }
+
+                    footprints[y][x] = 1;
+
+                    let i = y * 5 + x;
+                    this.rectList[i].opacity = 1;  
+                    
+                    // let logStr = "";
+                    // for (let i = 0; i < footprints.length; i++){
+
+                    //     logStr += footprints[i].join(",") + "\n"; 
+                    // }
+                    // console.log(logStr)
+                    // console.log("------")
+
+                    if ( (y - 1 >= 0) && (footprints[y - 1][x] == 0) && (this.map[y - 1][x] == 0) ){
+                        task.push([x, y - 1]);
+                        footprints[y - 1][x] = 1;
+                    }
+                    if ( (x - 1 >= 0) && (footprints[y][x - 1] == 0) && (this.map[y][x - 1] == 0) ){
+                        task.push([x - 1, y]);
+                        footprints[y][x - 1] = 1;
+                    }
+                    if ( (x + 1 < this.width) && (footprints[y][x + 1] == 0) && (this.map[y][x + 1] == 0) ){
+                        task.push([x + 1, y]);
+                        footprints[y][x + 1] = 1;
+                    }
+                    if ( (y + 1 < this.width) && (footprints[y + 1][x] == 0) && (this.map[y + 1][x] == 0) ){
+                        task.push([x, y + 1]);
+                        footprints[y + 1][x] = 1;
+                    }
+
+                }
+
+            }
+
+            clearOpacityRects(){
+
+                let x = 2;
+                let y = 3;
+                let i = y * 5 + x;
+                this.rectList[i].opacity = 1;
+            }
+
+        }
+        
+        class Rect{
+            constructor(x, y){
+                this.opacity = 1;
+                this.width = 50;
+                this.positionX = x;
+                this.positionY = y;
+            }
+
+            setOpacity(o){
+                this.opacity = o;
+            }
+
+            linearOpacity(){
+                this.opacity -= this.opacity > 0 ? 0.02 : 0
+                return this.opacity;
+            }
+
+        }
+
+        class Renderer{
+            constructor(canvas){
+                this.canvas = canvas;
+                this.ctx = this.canvas.getContext("2d");
+                this.task = [];
+            }
+
+            setTask(rect){
+                this.task = rect;
+            }
+
+            getTask(){
+                return this.task;
+            }
+
+            render(){
+                let loop = () => {
+                    this.ctx.clearRect(0, 0, 300, 300);
+                    for(let i = 0; i < this.task.length; i++){
+                        this.ctx.fillStyle = 'rgba(0, 0, 0, ' + this.task[i].linearOpacity() +')';
+                        this.ctx.fillRect( this.task[i].positionX, this.task[i].positionY, this.task[i].width, this.task[i].width);   
+                    }
+                    requestAnimationFrame(loop);
+                }
+                loop();
+            }
+        }
+
+        const canvas = document.getElementsByClassName("argoCanvas")[0];
+
+        const maze = new Maze(5, 5);
+        const renderer = new Renderer(canvas);
+
+        renderer.setTask(maze.rectList);
+        renderer.render();
+
+        maze.bfs();
+
+        window.setInterval(() => {
+            // renderer.task[12].setOpacity(1);
+            maze.setSG();
+            maze.setMap()
+            maze.setWall();
+            maze.bfs();
+        }
+        ,5000)
+        
+
+    </script>
+</body>
+
+</html>

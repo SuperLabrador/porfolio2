@@ -1,0 +1,249 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.background {
+  z-index: -999999;
+  position: fixed;
+  background-color: rgb(196, 193, 114);
+}
+
+li {
+  list-style-type: none;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  height: 5vh;
+}
+
+#menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#menu ul li{
+  width: 10vw;
+  padding: 5px 10px;
+  margin: 1vw;
+  text-align: center;
+  background-color: rgba(255,255,255,0.5);
+}
+
+#menu ul li a{
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;;
+  animation-name: fontSwitch;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fontSwitch {
+  0%, 100% {font-family: 'Noto Sans JP', sans-serif;}
+  25% {font-family: 'Kosugi Maru', sans-serif;}
+  50% {font-family: 'Shippori Mincho', serif;}
+  75% {font-family: 'DotGothic16', sans-serif;}
+}
+
+#language ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.languageContainer {
+  margin: 20px;
+  width: 160px;
+  height: 160px;
+  border: solid black 1px;
+  border-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, .7);
+}
+
+.languageContainer .li {
+  font-size: 3em;
+}
+@media screen and (max-width: 960px) {
+  .languageContainer{
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border: solid black 1px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .7);
+  }
+  .languageContainer .li {
+    font-size: 1em;
+  }
+}
+
+#practice {
+  width: 80%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 960px) {
+  #practice{
+    width: 500px;
+  }
+}
+
+#argoMenu {
+  position: relative;
+  width: 100vw;
+  height: 300px;
+}
+
+#argoMenu .argo {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: solid black 1px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, .7);
+}
+
+.floydwarshall {
+  top: 0%;
+  left: 20%;
+  font-size: 0.7em;
+}
+
+.bfs {
+  top: 0%;
+  right: 20%;
+}
+
+.cumulativeSum {
+  top: 40%;
+  left: 10%;
+}
+
+.gcd {
+  top: 40%;
+  right: 10%;
+}
+
+.eratosthenes {
+  top: 80%;
+  left: 20%;
+  font-size: 0.8em;
+}
+
+.primeFactorization {
+  top: 80%;
+  right: 20%; 
+}
+
+.argoCanvasContainer {
+  align-items: center;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: calc(50% - 140px);
+  left: calc(50% - 140px);
+  z-index: -50;
+  /* background-color: white;
+  border: solid 1px rgb(136, 136, 136);
+  border-radius: 10px; */
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.interestsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.interest {
+  margin: 0 30px;
+  width: 250px;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.interestName {
+  padding: 3px 20px;
+  border-bottom: 1px dotted black;
+}
+
+.reactCode p {
+  padding: 10px;
+}
+
+.gototop {
+  position: fixed;
+  width: 180px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: white;
+  bottom: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gototop {
+  bottom: -3vh;
+}
+
+.gototop span {
+  position: relative;
+  background-color: rgb(70, 70, 70);
+  height: 3px;
+  width: 20px;
+  display: block;
+}
+
+.gototop span:nth-child(1) {
+  left: 4px;
+  transform: rotate(135deg);
+}
+
+.gototop span:nth-child(2) {
+  right: 4px;
+  transform: rotate(45deg);
+}
+
+footer {
+  height: 20vh;
+}
